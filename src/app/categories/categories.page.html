@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Categories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="categories">
+    <ion-card *ngFor="let category of categories">
+      <ion-card-header>
+        <ion-card-title>{{ category }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" color="primary" (click)="onCategoryClick(category)">
+          View Products
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

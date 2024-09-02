@@ -1,0 +1,7 @@
+{
+  "name": "Practico1_Api",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

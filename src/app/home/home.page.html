@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="products">
+    <ion-card *ngFor="let product of products" (click)="onProductClik(product.id)">
+      <ion-img [src]="product.image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ product.title }}</ion-card-title>
+        <ion-card-subtitle>Price: {{ product.price | currency }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
